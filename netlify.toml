@@ -1,7 +1,7 @@
 [build]
-publish = "public"
-command = "echo 'Using pre-built public folder'"
+  command = "mkdir -p themes && ln -sfn $PWD themes/hugo-profile && cd exampleSite && hugo --gc --minify --themesDir ../themes -d ../public"
+  publish = "public"
 
-[context.production.environment]
-HUGO_VERSION = "0.147.0"
-HUGO_ENV = "production"
+[build.environment]
+  HUGO_VERSION = "0.147.0"
+  HUGO_ENV = "production"
